@@ -10,13 +10,13 @@ I need extended permission handling, but at the same time i don't like to copy-p
 
 So i use [https://github.com/Zizaco/entrust](https://github.com/Zizaco/entrust) for Roles and Permissions so in routes.php i have :
 
-```
+{% highlight php %}
 Route::get('test/{id}', ['uses' => 'TestController@index', 'middleware' => 'auth', 'access'=>['PERMISSION_KEY']]);
-```
+{% endhighlight %}
 
 And 'access' is read in auth middleware like this :
 
-```
+{% highlight php %}
 
 public function handle($request, Closure $next)
 {
@@ -45,7 +45,7 @@ public function handle($request, Closure $next)
 
 	return $next($request);
 }
-```
+{% endhighlight %}
 
 So this way you can add access roles or pass a list of permissions etc..
 

@@ -10,8 +10,8 @@ I am on Ubuntu Gnome and i love the integrated screen recorder. But its duration
 
 To change it to 1h add.
 
-```
+{% highlight bash %}
 gsettings set org.gnome.settings-daemon.plugins.media-keys max-screencast-length 3600
-```
+{% endhighlight %}
 
 If you want change the value in seconds as you wish.

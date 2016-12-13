@@ -13,7 +13,8 @@ For the moment "a solution" is to delete the current "/usr/share/applications/go
 Because it replaces the changes in it.
 Create a new file "/usr/share/applications/google-chrome-c.desktop" i put "-c" not to be replaced automatically.
 
-```
+
+{% highlight bash %}
 [Desktop Entry]
 Version=1.0
 Name=Google Chrome
@@ -41,4 +42,4 @@ Exec=/usr/bin/google-chrome-stable --incognito
 TargetEnvironment=Unity
 ## Custom
 StartupWMClass=Google-chrome-stable
-```
+{% endhighlight %}

@@ -20,7 +20,7 @@ Used when opened to broadcast a major refresh signal.
 1 - Server
 Must be visible to all browsers + Editor machine
 
-```
+{% highlight javascript %}
 "use strict";
 // used for start-stop script
 process.title = 'nodejscurrent';
@@ -53,7 +53,7 @@ io.sockets.on('connection', function (socket) {
 		console.log("MSG", data);
 	});
 });
-```
+{% endhighlight %}
 
 2. Start-Stop bash script
 
@@ -65,7 +65,7 @@ ps aux | grep nodejsrefresher | awk '{ system("kill -9 "$2)}'; nodejs server.js
 3. The refresher page.
 Must be visible for the sublime-editor
 
-```
+{% highlight javascript %}
 
 		<!-- REFRESHER -->
 <script type="text/javascript" src="http://static/socket/socket.io.min.js"></script><script type="text/javascript">// <![CDATA[
@@ -77,21 +77,21 @@ Must be visible for the sublime-editor
 
 // ]]></script>
  <!-- END -->
-```
+{% endhighlight %}
 
 4. Custom sublime builder command
 * Create from Tools -> Build System -> New Build System
 
-```
+{% highlight javascript %}
 {
 	"shell_cmd": "google-chrome http://REFRESHER-VISIBLE-URL/refresh.html"
 }
-```
+{% endhighlight %}
 
 5. A simple snippet for the current page that's under development
 Add in head section. Put the client socket.io.min.js for example in 'static' folder.
 
-```
+{% highlight javascript %}
 <!-- REFRESHER -->
 <script type="text/javascript" src="http://VISIBLE_URL/socket.io.min.js"></script><script type="text/javascript">// <![CDATA[
 $(document).ready(function(){
@@ -102,7 +102,7 @@ $(document).ready(function(){
 })
 // ]]></script>
 <!-- END -->
-```
+{% endhighlight %}
 
 Maybe not a perfect solution but works really good for many browser windows + devices.
 Added in chrome "responsiView" plugin for testing standard resolutions.

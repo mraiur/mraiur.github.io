@@ -17,9 +17,9 @@ gsettings get org.gnome.shell enabled-extensions
 
 ## Example output
 
-```
+{% highlight bash %}
 ['alternate-tab@gnome-shell-extensions.gcampax.github.com', 'unitylike-hotkey@webgyerek.net', 'impatience@gfxmonk.net', 'topIcons@adel.gadllah@gmail.com', 'user-theme@gnome-shell-extensions.gcampax.github.com', 'workspace-indicator@gnome-shell-extensions.gcampax.github.com']
-```
+{% endhighlight %}
 
 Create a .sh script, i create it in my home folder with name ".extensions.sh" the dot makes it hidden file in nautilus.
 Thats only if your nautilus preferences is set not to show hidden files.
@@ -32,9 +32,10 @@ gsettings set org.gnome.shell enabled-extensions ""
 
 ## Example
 
-```
+
+{% highlight bash %}
 gsettings set org.gnome.shell enabled-extensions "['alternate-tab@gnome-shell-extensions.gcampax.github.com', 'unitylike-hotkey@webgyerek.net', 'impatience@gfxmonk.net', 'topIcons@adel.gadllah@gmail.com', 'user-theme@gnome-shell-extensions.gcampax.github.com', 'workspace-indicator@gnome-shell-extensions.gcampax.github.com']"
-```
+{% endhighlight %}
 
 And in startup applications add this script.
 

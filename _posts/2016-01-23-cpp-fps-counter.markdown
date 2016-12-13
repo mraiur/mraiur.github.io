@@ -9,7 +9,7 @@ permalink: /2016/01/c-fps-counter/
 There many angles to do this and here is mine.
 
 
-```
+{% highlight cpp %}
 // include ctime to get timestamp
 #include <ctime>
 
@@ -35,6 +35,6 @@ void fps() {
 		frameCounter++;
 	}
 }
-```
+{% endhighlight %}
 
 And call fps() after each update in your main loop.

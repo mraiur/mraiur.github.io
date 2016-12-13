@@ -16,12 +16,12 @@ run it with
 ./stream-cam.sh stop
 ```
 
-```
+{% highlight bash %}
 ./stream-cam.sh start ( start runs first stop to delete the stream file and kill the stuck process etc.. )
-```
+{% endhighlight %}
 
 
-Default port is 8090. If you wish to change it first in the server.conf  ( Port 8090 ) and after that in the scripts/start.sh 
+Default port is 8090. If you wish to change it first in the server.conf  ( Port 8090 ) and after that in the scripts/start.sh
 ( http://localhost:8090/webcam.ffm ).
 
 

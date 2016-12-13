@@ -17,7 +17,7 @@ There exists exactly one Pythagorean triplet for which <var>a</var> + <var>b</va
 Find the product <var>abc</var>.
 
 
-```
+{% highlight javascript %}
 for(var one = 1; one <= 1000; one++ ){
     for( var two = one+1; two <= 1000; two++ ){
         for( var three = two+1; three <= 1000; three++){
@@ -28,4 +28,4 @@ for(var one = 1; one <= 1000; one++ ){
         }
     }
 }
-```
+{% endhighlight %}

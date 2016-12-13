@@ -19,24 +19,24 @@ Then i created two shortcuts.
 
 For ubuntu-server-start shortcut in <strong>Target</strong> put :
 
-```
+{% highlight bash %}
 C:\Program Files\Oracle\VirtualBox\VBoxManage.exe" startvm ubuntu-server --type headless
-```
+{% endhighlight %}
 
 
 For ubuntu-server-stop shortcut in **Target** put:
 
-```
+{% highlight bash %}
 "C:\Program Files\Oracle\VirtualBox\VBoxManage.exe" controlvm ubuntu-server savestate
-```
+{% endhighlight %}
 
 
 If you made the virtual image with different name just change it in:
 
-```
+{% highlight bash %}
 "C:\Program Files\Oracle\VirtualBox\VBoxManage.exe" startvm **ubuntu-server** --type headless
-```
+{% endhighlight %}
 
-```
+{% highlight bash %}
 "C:\Program Files\Oracle\VirtualBox\VBoxManage.exe" controlvm **ubuntu-server** savestate
-```
+{% endhighlight %}

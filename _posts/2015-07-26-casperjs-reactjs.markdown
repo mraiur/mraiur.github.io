@@ -15,13 +15,13 @@ The problems:
 1. PhantomJS has no funciton.bind prototype and its required for build version of React.
 2. Also there where infinite errors for:
 
-```
+{% highlight javascript %}
 Unsafe JavaScript attempt to access frame with URL about:blank from frame with URL file:///usr/lib/node_modules/casperjs/bin/bootstrap.js. Domains, protocols and ports must match.
-```
+{% endhighlight %}
 
 The solution for problem 1 is:
 
-```
+{% highlight javascript %}
 casper.on('page.initialized', function() {
         casper.evaluate(function() {
             var isFunction = function(o) {
@@ -62,7 +62,7 @@ casper.on('page.initialized', function() {
             }
         });
     });
-```
+{% endhighlight %}
 
 [Source](https://www.snip2code.com/Snippet/499383/Casperjs-bind-polyfill)
 

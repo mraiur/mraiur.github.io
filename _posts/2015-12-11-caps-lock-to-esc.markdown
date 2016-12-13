@@ -23,6 +23,6 @@ dconf read /org/gnome/desktop/input-sources/xkb-options
 
 So we need to add <b>'caps:escape'</b>
 
-```
+{% highlight bash %}
 dconf write /org/gnome/desktop/input-sources/xkb-options "['grp_led:scroll', 'numpad:microsoft', 'grp:win_space_toggle', 'caps:escape']"
-```
+{% endhighlight %}

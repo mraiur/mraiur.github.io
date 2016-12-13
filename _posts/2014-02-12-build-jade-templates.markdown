@@ -21,9 +21,9 @@ Added a build :
 Added the Putty directory to my environments PATH.
 And in my_custom_build_script.bat
 
-```
+{% highlight bash %}
 C:\"Program Files (x86)"\PuTTY\plink.exe -ssh mraiur@localhost "/PATH_TO_BUILD_SCRIPT/generate.sh"
-```
+{% endhighlight %}
 
 
 On the server generate.sh is done whatever way you want it :)
