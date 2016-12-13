@@ -1,0 +1,6 @@
+excerpt_separator: ""
+pygments: true
+markdown: kramdown
+url: http://mraiur.github.io
+title: MyCave
+paginate: 5
