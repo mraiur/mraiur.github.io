@@ -1,0 +1,39 @@
+---
+published: true
+title: Problem 5
+layout: post
+tags: [algorithms]
+categories: [algorithms,euler]
+permalink: /2013/10/problem-5/
+---
+
+# Smallest multiple
+
+2520 is the smallest number that can be divided by each of the numbers from 1 to 10 without any remainder.
+
+What is the smallest positive number that is <dfn title="divisible with no remainder">evenly divisible</dfn> by all of the numbers from 1 to 20?
+
+
+```
+var found = false;
+var num = 1;
+
+var allDevided;
+var cnt = 1;
+
+while( found === false ){
+    allDevided = true;
+    cnt = 1;
+    for(; cnt <;= 20; cnt++ ){
+        if(num%cnt!==0){
+            allDevided = false;
+        }
+    }
+    if(allDevided){
+        found = true;
+        console.log("=>", num);
+    }
+    num++;
+}
+
+```

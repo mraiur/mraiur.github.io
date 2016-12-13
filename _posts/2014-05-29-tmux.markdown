@@ -1,0 +1,29 @@
+---
+published: true
+title: tmux
+layout: post
+tags: [linux,tools,tmux]
+categories: [linux,tools]
+permalink: /2014/05/tmux/
+---
+As i don't like to constantly use the mouse to do some "text"/code related stuff.
+[Tmux](http://tmux.sourceforge.net) is the fix for the terminal :)
+
+Normally for ssh client on windows i use [mRemoteNG](http://www.mremoteng.org) but when using one machine to have opened several tabs just not to quit a task to do something else its not ok.
+
+So for a cheat sheet :
+
+[![](/files/tmux/tmux-cheatsheet-300x231.png)](/files/tmux/tmux-cheatsheet.png)
+
+# And some links
+
+- [Maximizing” a pane in tmux](http://superuser.com/questions/238702/maximizing-a-pane-in-tmux)
+    And sometimes its ok to use mouse :P
+- [On mouse click select pane](http://unix.stackexchange.com/questions/44634/tmux-change-window-pane-by-mouse-click)
+
+1. Open Tmux
+2. CRTL+B and type:
+
+```
+set -g mouse-select-pane on
+```

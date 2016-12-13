@@ -1,0 +1,28 @@
+---
+published: true
+title: Problem 10
+layout: post
+tags: [algorithms]
+categories: [algorithms,euler]
+permalink: /2013/10/problem-10/
+---
+
+# Summation of primes
+
+The sum of the primes below 10 is 2 + 3 + 5 + 7 = 17.
+
+Find the sum of all the primes below two million.
+
+```
+var num = 2;
+var sum = 0;
+
+while( num < 2000000) {
+    if(isPrimeNumber(num)){
+        sum+= num;
+    }
+    num++;
+}
+console.log("sum", sum);
+
+```

@@ -1,0 +1,50 @@
+---
+published: true
+title: .vimrc
+layout: post
+tags: [linux,tools]
+categories: [linux,tools]
+permalink: /2013/07/vimrc/
+---
+Normally i use Sublime but sometimes is just useful to type in the terminal vim FILE. So this is "my" vimrc file:
+
+```
+version 7.0
+if &cp | set nocp | endif
+let s:cpo_save=&cpo
+set cpo&vim
+set nu
+
+nmap gx <Plug>NetrwBrowseX
+nnoremap <silent> <Plug>NetrwBrowseX :call netrw#NetrwBrowseX(expand('^V<cWORD>'),0)^V
+let &cpo=s:cpo_save
+unlet s:cpo_save
+set backspace=indent,eol,start
+set fileencodings=ucs-bom,utf-8,latin1
+set guicursor=n-v-c:block,o:hor50,i-ci:hor15,r-cr:hor30,sm:block,a:blinkon0
+set helplang=en
+set history=50
+set hlsearch
+set ruler
+set viminfo='20,\'50
+' vim: set ft=vim :
+set t_Co=256
+'colors koehler
+colors zenburn
+execute pathogen#infect()
+syntax on
+filetype plugin indent on
+
+
+map <C-n> :NERDTreeToggle<CR>
+map <F6> :tabp<CR>
+map <F7> :tabn<CR>
+map <C-t><up> :tabr<cr>
+map <C-t><down> :tabl<cr>
+map <C-t><left> :tabp<cr>
+
+map <C-t><right> :tabn<cr>
+set background=dark
+
+:nmap <F12> :set invnumber<CR>
+```

@@ -1,0 +1,17 @@
+---
+published: true
+title: MongoDB 3+ on Ubuntu 15.10
+layout: post
+tags: [linux,ubuntu,mongodb,mongo,db]
+categories: [linux,ubuntu]
+permalink: /2015/12/mongodb-3-on-ubuntu-15-10/
+---
+Installing mongodb 3+ on Ubuntu 15.04+ has a hidden problem when trying to start the service.
+
+Because ubuntu stopped pre-installing "upstart-sysv" the mongo service is unable to start.
+
+So install and reboot after that mongo will run normally.
+
+```
+sudo apt-get install upstart-sysv
+```

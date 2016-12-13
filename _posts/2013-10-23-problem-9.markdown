@@ -1,0 +1,31 @@
+---
+published: true
+title: Problem 9
+layout: post
+tags: [algorithms]
+categories: [algorithms,euler]
+permalink: /2013/10/problem-9/
+---
+
+# Special Pythagorean triplet
+
+A Pythagorean triplet is a set of three natural numbers, **a < b < c**, for which,
+<div><var>a</var><sup>2</sup> + <var>b</var><sup>2</sup> = <var>c</var><sup>2</sup></div>
+For example, 3<sup>2</sup> + 4<sup>2</sup> = 9 + 16 = 25 = 5<sup>2</sup>.
+
+There exists exactly one Pythagorean triplet for which <var>a</var> + <var>b</var> + <var>c</var> = 1000.
+Find the product <var>abc</var>.
+
+
+```
+for(var one = 1; one <= 1000; one++ ){
+    for( var two = one+1; two <= 1000; two++ ){
+        for( var three = two+1; three <= 1000; three++){
+            if( one*one + two*two === three*three &amp;&amp; one + two + three === 1000) {
+                console.log("one", one, "two", two, "three", three);
+                console.log("product", one*two*three);
+            }
+        }
+    }
+}
+```

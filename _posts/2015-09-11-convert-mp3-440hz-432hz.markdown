@@ -1,0 +1,27 @@
+---
+published: true
+title: Convert mp3 440hz to 432hz with audacity
+layout: post
+tags: [440,432,convert,music,fun,stuff,linux]
+categories: [linux,stuff,fun,music]
+permalink: /2015/09/convert-mp3-440hz-to-432hz-with-audacity/
+---
+
+1. Create a new chain ( File ->; Edit Chains)
+2. Add new chain from the left menu
+3. Insert TimeScale
+4. Edit parameters
+5. Initial Pitch Shift (semitones) : <strong>-0.318</strong>
+6. Initial Pitch Shift %: <strong>-1.181</strong>
+7. Final Pitch Shift (semitones) : <strong>-0.318</strong>
+8. Final Pitch Shift % :<strong> -1.818</strong>
+9. OK and OK
+10. Insert Normalize
+11. Edit parameters
+12. Normalize maximum amplitude to : <strong>-0.1</strong>
+13. OK and OK
+14. Insert ExportMP3
+
+Run on files from File -> Apply Chain select your new chain and select files to be "cleaned".
+
+Audacity creates a "cleaned" folder so don't worry, it will not destroy your music.

@@ -1,0 +1,13 @@
+---
+published: true
+title: The Idea
+layout: post
+tags: [algorithms]
+categories: [algorithms,euler]
+permalink: /2013/07/the-idea/
+---
+I suck at Algorithms! That's what i though when someone asks me can i write and algorithm for something. But for several years are make money and have fun with code, and a friend shared this link [http://projecteuler.net](http://projecteuler.net)
+
+first time i saw it 1-2 years ago i thought that i must write it on paper and failed. But now i saw i must do it with code and i will post how i found the solutions.
+
+I will mostly find the solutions with Javascript because i don't care about the language, its more ease to test in devtools :)

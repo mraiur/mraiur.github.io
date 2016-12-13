@@ -1,0 +1,22 @@
+---
+published: true
+title: Sublime Text 3
+layout: post
+tags: [sublime,text,ide]
+categories: [ide,sublime-text]
+permalink: /2014/04/sublime-text-3/
+---
+
+Last year after using the sublime 2, saw that users with licenses can try sublime text 3. Bought the license, because i love the consistency and simplicity of it.
+
+The new features are also amazing:
+
+- Go-to declaration
+
+- Speed up
+
+- Better Tab view
+
+- Image preview's
+
+etc.

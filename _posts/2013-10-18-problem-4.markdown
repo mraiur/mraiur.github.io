@@ -1,0 +1,57 @@
+---
+published: true
+title: Problem 4
+layout: post
+tags: [algorithms]
+categories: [algorithms,euler]
+permalink: /2013/10/problem-4/
+---
+
+# Largest palindrome product
+
+A palindromic number reads the same both ways. The largest palindrome made from the product of two 2-digit numbers is 9009 = 91 ![](http://projecteuler.net/images/symbol_times.gif)99.
+
+Find the largest palindrome made from the product of two 3-digit numbers.
+
+```
+var limit = 1000;
+
+function checkIsPalindrom(number){
+    var str = ""+number;
+    var reversed = "";
+    var i = str.length-1;
+    while( i >= 0 ) {
+        reversed+= str[i];
+        i--;
+    }
+    if(reversed === str){
+        return true;
+    } else {
+        return false;
+    }
+}
+
+var max = {
+    result : 0,
+    numOne : 0,
+    numTwo : 0
+},
+product = 0,
+isPalindrome = false;
+
+var cntTwo = 100;
+for( var cntOne = 100; cntOne <= limit; cntOne++){
+    cntTwo = 100;
+    for( ; cntTwo <= limit; cntTwo++ ){
+        product = cntOne * cntTwo;
+        isPalindrome = checkIsPalindrom( product );
+        if( isPalindrome && max.result < product ){
+            max.numOne = cntOne;
+            max.numTwo = cntTwo;
+            max.result = product;
+        }
+    }
+}
+
+console.log('end', max);
+```
