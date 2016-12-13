@@ -43,13 +43,17 @@ header{
 }
 header h1{
     line-height: 1.2em;
+    text-shadow: 2px 2px #e0e0e0;
 }
 
 .home{
   margin-top: 70px
 }
 time{
-  padding-left: 20px;
+	font-size: 130%;
+	text-align:right;
+	padding-left: 20px;
+	text-shadow: 2px 2px #e0e0e0;
 }
 
 article{
@@ -64,6 +68,7 @@ article a{
 }
 article h3{
     color: #FF9999;
+    font-size: 130%;
 }
 article a:visited{
     color: #74A2D0;
@@ -101,12 +106,32 @@ article > ul, article > ol, .post-list ul, .post-list ol{
     padding: 0 10px 0 0
 }
 .post-list > li{
-    border-bottom: 1px solid #F4F6F7;
+	text-align: justify;
+	text-justify: inter-word;
+
+	border: 1px solid #F4F6F7;
     padding: 20px 10px;
+
+	margin-bottom: 20px;
+
+    -webkit-box-shadow: 0px 6px 12px -6px rgba(0,0,0,0.50);
+    -moz-box-shadow: 0px 6px 12px -6px rgba(0,0,0,0.50);
+    box-shadow: 0px 6px 12px -6px rgba(0,0,0,0.50);
 }
 .post-list > li:last-child{
     border: 0;
 }
+
+.post-list > li > h3{
+	margin-bottom: 20px;
+	padding-bottom: 20px;
+	border-bottom: 1px solid #F4F6F7;
+	text-shadow: 2px 2px #C9C9C9;
+}
+.post-list > li > h3 > a {
+	color: #213a52;
+}
+
 .post-list h3{
     margin-bottom: 10px
 }
