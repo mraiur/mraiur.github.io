@@ -1,0 +1,48 @@
+---
+published: true
+title: Problem 15
+layout: post
+tags: [algorithms]
+categories: [algorithms,euler]
+permalink: /2015/12/problem-15/
+---
+
+# Lattice paths
+
+Starting in the top left corner of a 2×2 grid, and only being able to move to the right and down, there are exactly 6 routes to the bottom right corner.
+
+How many such routes are there through a 20×20 grid?
+
+[Problem 15 ](https://projecteuler.net/problem=15)
+
+
+I initially started to do the brute force calculation.
+From top-left to bottom-right step by step ( grid size * 2 ) but that is brutal on the PC even on step 20.
+
+Then there is this solution starting from the back right-bottom to top-left each cell has two points to move backwards.
+
+Solution:
+
+{% highlight javascript %}
+var gridSize = 20;
+var pathSize = gridSize * 2; // due to the rules of only right and down movement
+var grid = {};
+
+for( var cell = 0; cell < gridSize; cell++ )
+{
+    grid[cell+"x"+gridSize] = 1;
+    grid[gridSize+"x"+cell] = 1;
+}
+
+
+for( var row = gridSize-1; row >= 0; row-- )
+{
+    for( var cell = gridSize-1; cell >= 0; cell-- )
+    {
+        grid[row+'x'+cell] = grid[(row+1)+"x"+cell] + grid[row+"x"+(cell+1)];
+    }
+}
+
+
+console.log( grid['0x0'] );
+{% endhighlight %}
