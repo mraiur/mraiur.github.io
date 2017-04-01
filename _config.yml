@@ -1,7 +1,7 @@
 excerpt_separator: ""
 highlighter: rouge
 markdown: kramdown
-url: https://mraiur.github.io
+url: http://mraiur.github.io
 enforce_ssl: blog.mraiur.com
 title: MyCave
 paginate: 5
