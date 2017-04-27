@@ -27,6 +27,22 @@ a:hover{
     margin: 0 auto;
 }
 
+.highlighter-rouge{
+    padding: 14px;
+}
+
+.highlight code{
+    padding: 4px 8px;
+}
+
+@media only screen and (min-width: 600px) and (max-width: 1280px) {
+    .wrapper{ width: 600px;}
+}
+@media screen and (min-width: 1281px) {
+    .wrapper{ width: 1280px;}
+}
+
+
 nav{
     text-align: center
 }
