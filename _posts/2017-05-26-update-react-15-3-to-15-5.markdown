@@ -1,0 +1,264 @@
+---
+published: true
+title: Upgrade ReactJS 15.03 to 15.05
+layout: post
+tags: [reactjs,upgrade,15-3,15-5]
+categories: [js,javascript,react,reactjs]
+permalink: /upgrade-react-15-3-to-15-5
+---
+
+
+Update Application from 
+
+```js
+	"react-addons-css-transition-group": "^15.3.0",
+	"react-addons-shallow-compare": "^15.4.1",
+	"react-dom": "^15.3.0",
+	"react-router": "^3.0.0"
+```
+
+
+To
+
+```js
+	"react": "^15.5.4",
+	"react-addons-css-transition-group": "^15.5.2",
+	"react-addons-shallow-compare": "^15.5.2",
+	"react-dom": "^15.5.4",
+	"react-router": "^4.1.1",
+	"react-router-dom": "^4.1.1"
+```
+
+Major changes are in react and react-router.
+ES6 usage of react removes their own "implementation" in favor of using native js classes and just extending React.Component
+react-router removed nasted routes also added the Switch component that just renders the matched route.
+Link is loaded from react-router-dom not from react-router directly.
+
+
+Basic representation of the app structure is:
+
+```
+├── components
+│   ├── Home.jsx
+├── dispatcher.js
+├── index.jsx
+├── app.jsx
+```
+
+**app.jsx  ( Before )** 
+
+```js
+import React from 'react';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
+
+export default React.createClass({
+    getInitialState() {
+        return {
+            animationName: 'push'
+        }
+    },
+
+    componentWillMount()
+    {
+        // Load data 
+    },
+
+    componentDidMount()
+    {
+        // Event attach
+    },
+
+    componentWillUnmount() {
+        // Event dettach
+    },
+
+    render() {
+        let content = [];
+
+        let sharedProps = {
+            params: this.props.params,
+            location: this.props.location
+        };
+
+		content.push(
+		    React.cloneElement(this.props.children, merge({}, {
+			    key: this.props.location.pathname
+		    }, sharedProps))
+        );
+
+
+        return (
+            <div>
+                <div className="app-content">
+                    <ReactCSSTransitionGroup
+                        transitionName='fadeTransition'
+                        transitionAppear={true}
+                        transitionAppearTimeout={500}
+                        transitionEnterTimeout={600}
+                        transitionLeaveTimeout={600}>
+                        {content}
+                    </ReactCSSTransitionGroup>
+                    <div className="clearfix"></div>
+                </div>
+            </div>
+        );
+    }
+});
+```
+
+**index.jsx ( Before )** 
+
+
+```js
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { IndexRoute, Router, Route, hashHistory } from 'react-router';
+
+import App from "./app.jsx";
+import HomePage from "./components/Home.jsx";
+
+ReactDOM.render((
+    <Router history={hashHistory}>
+      <Route path="/" component={App}>
+          <IndexRoute component={HomePage}/>
+
+          <Route path=":locale/:region" >
+              
+          </Route>
+      </Route>
+    </Router>
+), document.getElementById('app'));
+```
+
+**Home.jsx ( Before )** 
+
+```js
+import React from 'react';
+import { Link } from 'react-router';
+
+export default React.createClass({
+    displayName: 'HomePage',
+
+    getInitialState() {
+        return {};
+    },
+
+
+    render() {
+
+        return (
+            <div className="page home-page">
+                <Link to='/' type="button" className="btn btn-default navbar-btn">Home</Link>
+            </div>
+        );
+    },
+});
+```
+
+
+After the upgrade
+
+
+**app.jsx  ( After )** 
+
+```js
+import React from 'react';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+import { Route, Switch } from 'react-router';
+
+export default class App extends React.Component
+{
+	constructor( props )
+    {
+        super(props);
+        this.state = {
+			animationName: 'push'
+        };
+    }
+    componentWillMount()
+    {
+        // Load data 
+    }
+
+    componentDidMount()
+    {
+        // Event attach
+    }
+
+    componentWillUnmount() {
+        // Event dettach
+    }
+
+    render() {
+        let content = this.props.children;
+
+        return (
+            <div>
+                <div className="app-content">
+                    <ReactCSSTransitionGroup
+                        transitionName='fadeTransition'
+                        transitionAppear={true}
+                        transitionAppearTimeout={500}
+                        transitionEnterTimeout={600}
+                        transitionLeaveTimeout={600}>
+                        <Switch>
+                                    <Route path="/" component={HomePage} />
+                        </Switch>
+                    </ReactCSSTransitionGroup>
+                    <div className="clearfix" />
+                </div>
+            </div>
+        );
+    }
+}
+```
+
+**index.jsx  ( After )** 
+
+```js
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { HashRouter as Router } from 'react-router-dom';
+import {
+    Route,
+    Switch
+} from 'react-router';
+
+import App from "./app.jsx";
+
+ReactDOM.render((
+    <Router>
+        <Route path='/:locale/:region' component={App}>
+
+        </Route>
+    </Router>
+
+), document.getElementById('app'));
+```
+
+**Home.jsx  ( After )** 
+
+```js
+import React from 'react';
+import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
+
+class HomePage extends React.Component{
+
+	constructor( props )
+	{
+		super(props);
+		this.state = {};
+	}
+
+    render() {
+        return (
+            <div className="page home-page">
+                <Link to='/' type="button" className="btn btn-default navbar-btn">Home</Link>
+            </div>
+        );
+    }
+};
+
+export default HomePage;
+```

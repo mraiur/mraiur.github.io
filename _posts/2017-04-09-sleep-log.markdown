@@ -48,6 +48,8 @@ One for 3 hour core sleep
 	Remove notification
 
 
-Preview of sleep log v1.0.1
+# Github
 
-[![/files/sleep-log/v1.0.1-300x209.png](/files/sleep-log/v1.0.1-300x209.png)](/files/sleep-log/v1.0.1.png)
+## Version v1.0.1
+	
+	[![/files/sleep-log/v1.0.1-300x209.png](/files/sleep-log/v1.0.1-300x209.png)](/files/sleep-log/v1.0.1.png)
