@@ -13,39 +13,36 @@ Made 2 tasks
 
 One for 25 min nap
 
-	Display a notification that a nap is in process.
-	Post to log server with status 1 ( begin sleep )
-	Play 25 min sleep music 
-	Stop Mobile 
-	Stop WiFi
-	Set Do not disturb
-	Add countdown alert timer
-
-	Wait 25 min 
-
-	Start wifi 
-	Wait 20 sec
-	Post to log server with server 2 ( end of sleep )
-	Remove notification
-	Return Sound to normal levels
+- Display a notification that a nap is in process.
+- Post to log server with status 1 ( begin sleep )
+- Play 25 min sleep music 
+- Stop Mobile 
+- Stop WiFi
+- Set Do not disturb
+- Add countdown alert timer
+- Wait 25 min 
+- Start wifi 
+- Wait 20 sec
+- Post to log server with server 2 ( end of sleep )
+- Remove notification
+- Return Sound to normal levels
 
 
 One for 3 hour core sleep
 	
-	Display a notification that a sleep is in process.
-	Start wifi
-	Wait 20 sec
-	Post to log server with status 1 ( begin sleep )
-	Stop Wifi
-	Stop Mobile
-	Mute sounds
-
-	Wait for time to match "~" 07.00
-	Start wifi
-	Wait 20 sec
-	Remove Do not disturb
-	Post to log server with status 2 ( end of sleep )
-	Remove notification
+- Display a notification that a sleep is in process.
+- Start wifi
+- Wait 20 sec
+- Post to log server with status 1 ( begin sleep )
+- Stop Wifi
+- Stop Mobile
+- Mute sounds
+- Wait for time to match "~" 07.00
+- Start wifi
+- Wait 20 sec
+- Remove Do not disturb
+- Post to log server with status 2 ( end of sleep )
+- Remove notification
 
 
 # Github
