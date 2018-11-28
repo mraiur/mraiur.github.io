@@ -13,12 +13,15 @@ But headless chrome is ignoring /etc/hosts file.
 Setting *--no-proxy-server* is ignored IF running in headless mode.
 
 Here are the versions of the packages:
+
+```
+
     xvfb - 2:1.19.6-1ubuntu4.2
     google-chrome - 70.0.3538.110
     jenkins - 2.138.3
     nightwatch - v0.9.21
     Ubuntu 18.04 
-
+```
 
 Also the jenkins user is set in sudoers file:
 
