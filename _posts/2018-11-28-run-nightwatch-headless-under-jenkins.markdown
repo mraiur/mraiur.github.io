@@ -44,6 +44,15 @@ export DISPLAY=:10
 
 ```
 
+Or run the tests with xvfb-run
+
+
+```
+
+xvfb-run nightwatch
+
+```
+
 
 Tips for debugging:
 - Tail the custom application log if it has any. I was testing a laravel project and tailing storage/logs/laravel.log Its a good idea to truncate the file if the projects is not deleted before each jenkins build.
